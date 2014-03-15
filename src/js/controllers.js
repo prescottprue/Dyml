@@ -5,6 +5,15 @@
 angular.module('myApp.controllers', [])
    .controller('HomeCtrl', ['$scope', 'syncData', function($scope, syncData) {
       syncData('syncedValue').$bind($scope, 'syncedValue');
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('get', '../../ccda/Patient-0.xml', false);
+      xhr.send();
+      
+      var bb = BlueButton(xhr.responseText);
+      $scope.list = bb.demographics().json();
+      console.log(bb.demographics().json());
+    
    }])
 
   .controller('ChatCtrl', ['$scope', 'syncData', function($scope, syncData) {

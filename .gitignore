@@ -5,6 +5,5 @@ test
 config
 logs
 development
-src/config.json
 src/identity.json
 .DS_Store
