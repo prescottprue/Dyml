@@ -5969,6 +5969,7 @@ body {
   height: auto !important;
   height: 100%;
   margin: 0 auto -4em;
+  width: 980px;
 }
 .form-control {
   height: 32px;
