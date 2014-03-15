@@ -1,92 +1,94 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
 <head>
-    <meta charset="utf-8">
-    <title>My AngularJS App</title>
-    <link rel="stylesheet" href="css/app.css"/>
-    <link rel="stylesheet" href="css/styles.css"/>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body ng-cloak>
-<nav class="navbar navbar-inverse navbar-fixed-top sticky" role="navigation" ng-controller="LoginCtrl" ng-hide="ignoreHead">
+<div class='bodywrap'>
+  <nav class="navbar navbar-inverse navbar-fixed-top sticky" role="navigation" ng-controller="LoginCtrl" ng-hide="ignoreHead">
     <div class="container nav">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle navbar-inverse" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand company" href="#/home">Company</a><span class="slogan">Life. Easier.</span>
-        </div>
-        <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
-            <ul class="nav navbar-nav" >
-                <!--<li><a href="#/catalog">Services</a></li>
-                <li ng-show-auth="login"><a href="#/registries">Causes</a></li>-->
-                <!--Signup part of login page <li ng-show-auth="logout,error" ng-click="createMode = true" ng-hide="createMode"><a href="#/login">Sign Up</a></li>         <li ng-show-auth="login"><a href="#/account">Account</a></li>
-                <li ng-show-auth="login"><a href="" ng-click="logout()">Logout</a></li>-->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle navbar-inverse" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand company" href="#/home">Dyml</a><span class="slogan">Life. Easier.</span>
+      </div>
+      <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+          <ul class="nav navbar-nav" >
+              <!--<li><a href="#/catalog">Services</a></li>
+              <li ng-show-auth="login"><a href="#/registries">Causes</a></li>-->
+              <!--Signup part of login page <li ng-show-auth="logout,error" ng-click="createMode = true" ng-hide="createMode"><a href="#/login">Sign Up</a></li>         <li ng-show-auth="login"><a href="#/account">Account</a></li>
+              <li ng-show-auth="login"><a href="" ng-click="logout()">Logout</a></li>-->
 
-                <li class="dropdown">
-                    <a class="dropdown-toggle" ng-show-auth="login" href="#" data-toggle="dropdown" ng-click="$event.preventDefault();"><i class="fa fa-user"></i> <strong class="caret"></strong></a>
-                    <ul class="dropdown-menu" style="padding: 5px;">
-                        <li class="presentation"><a role="menuitem" tabindex="-1" href="#/account">Account</a></li>
-                        <li class="presentation"><a role="menuitem" ng-click="logout()" tabindex="-1" href="#">Logout</a></li>
-                    </ul>
-                </li>
-                <!-- Sign in Dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" ng-show-auth="logout,error" href="#" data-toggle="dropdown">Log In <strong class="caret"></strong></a>
-                    <ul class="dropdown-menu" style="padding: 15px; padding-bottom: 13px;">
-                        <!-- Login form -->
-                        <form>
-                            <input class="form-control login" type="text" ng-model="name" ng-cloak ng-show="createMode" size="30" placeholder="Name" />
-                            <input class="form-control login" type="text" ng-model="email" size="30" placeholder="Email" />
-                            <input class="form-control login" type="password" ng-model="pass" size="30" placeholder="Password"/>
-                            <input class="form-control login" type="password" ng-model="confirm" ng-cloak ng-show="createMode" size="30" placeholder="Confirm Password" style="margin-bottom:10px;"/>
+              <li class="dropdown">
+                  <a class="dropdown-toggle" ng-show-auth="login" href="#" data-toggle="dropdown" ng-click="$event.preventDefault();"><i class="fa fa-user"></i> <strong class="caret"></strong></a>
+                  <ul class="dropdown-menu" style="padding: 5px;">
+                      <li class="presentation"><a role="menuitem" tabindex="-1" href="#/account">Account</a></li>
+                      <li class="presentation"><a role="menuitem" ng-click="logout()" tabindex="-1" href="#">Logout</a></li>
+                  </ul>
+              </li>
+              <!-- Sign in Dropdown -->
+              <li class="dropdown">
+                  <a class="dropdown-toggle" ng-show-auth="logout,error" href="#" data-toggle="dropdown">Log In <strong class="caret"></strong></a>
+                  <ul class="dropdown-menu" style="padding: 15px; padding-bottom: 13px;">
+                      <!-- Login form -->
+                      <form>
+                          <input class="form-control login" type="text" ng-model="name" ng-cloak ng-show="createMode" size="30" placeholder="Name" />
+                          <input class="form-control login" type="text" ng-model="email" size="30" placeholder="Email" />
+                          <input class="form-control login" type="password" ng-model="pass" size="30" placeholder="Password"/>
+                          <input class="form-control login" type="password" ng-model="confirm" ng-cloak ng-show="createMode" size="30" placeholder="Confirm Password" style="margin-bottom:10px;"/>
 
-                            <input style="float: left; margin-right: 10px;" ng-hide="createMode" type="checkbox" value="1" />
-                            <label class="string optional" ng-hide="createMode" style="display:inline; font-weight: normal;"> Remember me</label>
+                          <input style="float: left; margin-right: 10px;" ng-hide="createMode" type="checkbox" value="1" />
+                          <label class="string optional" ng-hide="createMode" style="display:inline; font-weight: normal;"> Remember me</label>
 
-                            <button class="btn btn-success btn-login" ng-click="login()" ng-hide="createMode" style="width: 100%; margin-top:15px;">Log In</button>
-                            <!--Make new account -->
-                            <button class="btn btn-success btn-login" ng-cloak ng-show="createMode" ng-click="createAccount()" style="width: 65%;">Create Account</button>
-                            <button class="btn btn-danger btn-login" ng-cloak ng-show="createMode" ng-click="createMode = false" style="width: 32%;">Cancel</button>
-                            <label ng-hide="createMode" style="font-weight: normal; font-size: 14px; text-align:center; margin-bottom:0px;">Don't have an account?
-                                <a ng-click="createMode = true" ng-hide="createMode" style="margin-left:7px;"> Make one</a>
-                            </label>
-                        </form>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+                          <button class="btn btn-success btn-login" ng-click="login()" ng-hide="createMode" style="width: 100%; margin-top:15px;">Log In</button>
+                          <!--Make new account -->
+                          <button class="btn btn-success btn-login" ng-cloak ng-show="createMode" ng-click="createAccount()" style="width: 65%;">Create Account</button>
+                          <button class="btn btn-danger btn-login" ng-cloak ng-show="createMode" ng-click="createMode = false" style="width: 32%;">Cancel</button>
+                          <label ng-hide="createMode" style="font-weight: normal; font-size: 14px; text-align:center; margin-bottom:0px;">Don't have an account?
+                              <a ng-click="createMode = true" ng-hide="createMode" style="margin-left:7px;"> Make one</a>
+                          </label>
+                      </form>
+                  </ul>
+              </li>
+          </ul>
+      </div>
     </div>
     <div ng-hide="ignoreHead" class="row" style="background-color: #2c3e50; height: 5px;"></div>
-</nav>
-<div ng-view></div>
+  </nav>
 
-<div>AngularFire-seed v<span app-version></span></div>
+  <div ng-view></div>
+  <div>AngularFire-seed v<span app-version></span></div>
 
-<script src="https://cdn.firebase.com/v0/firebase.js"></script>
-<script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
-<script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script src="js/lib/ui-bootstrap-tpls-0.10.0.min.js"></script>
+  <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+  <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="js/lib/ui-bootstrap-tpls-0.10.0.min.js"></script>
 
-<script src="js/app.js"></script>
-<script src="js/config.js"></script>
-<script src="js/controllers.js"></script>
-<script src="js/directives.js"></script>
-<script src="js/filters.js"></script>
-<script src="js/routes.js"></script>
-<script src="js/services.js"></script>
-<script src="js/service.login.js"></script>
-<script src="js/service.firebase.js"></script>
-<script src="js/service.changeEmail.js"></script>
-<script src="js/module.simpleLoginTools.js"></script>
-<script src="js/module.routeSecurity.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/service.login.js"></script>
+  <script src="js/service.firebase.js"></script>
+  <script src="js/service.changeEmail.js"></script>
+  <script src="js/module.simpleLoginTools.js"></script>
+  <script src="js/module.routeSecurity.js"></script>
+  </div><!-- end bodywrap -->
 </body>
 </html>
