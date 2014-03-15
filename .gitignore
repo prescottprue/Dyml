@@ -5,4 +5,6 @@ test
 config
 logs
 development
+app/config.json
+app/identity.json
 .DS_Store
