@@ -1,0 +1,8 @@
+node_modules
+dist
+.tmp
+test
+config
+logs
+development
+.DS_Store
