@@ -11,7 +11,7 @@ module.exports = function(grunt) {
           //keepalive: true, keeping grunt running
           //livereload:true,
           open:{
-            target: 'http://localhost:2009',
+            target: 'http://localhost:2009/app',
             appName: 'Google Chrome',
           }
       }
@@ -20,21 +20,21 @@ module.exports = function(grunt) {
     less:{
       style:{
         files:{
-          "app/stylesheets/css/styles.css": "./app/stylesheets/less/styles.less"
+          "app/css/styles.css": "./app/less/styles.less"
         },
       }
     },
     
     watch:{
       css:{
-        files: ["app/stylesheets/less/*.less", "app/stylesheets/css/*.css"],
+        files: ["app/less/*.less", "app/css/*.css"],
         tasks: ["less:style"],
         options:{
           livereload:true
         }
       },
       html:{
-        files: ['app/index.html', 'app/stylesheets/css/*.css'],
+        files: ['app/index.html', 'app/css/*.css'],
         options: {
           livereload: true
         }
