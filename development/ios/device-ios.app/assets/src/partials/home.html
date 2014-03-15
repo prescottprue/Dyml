@@ -1,25 +1,6 @@
 <h2>Home</h2>
-<div class="status good" ng-show-auth="login">
-	<p>Hello! You are logged in.</p>
-	<table class="table table-striped table-hover ">
-	  <thead>
-	    <tr>
-	      <th>#</th>
-	      <th>Column heading</th>
-	      <th>Column heading</th>
-	      <th>Column heading</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <td>1</td>
-	      <td>Column content</td>
-	      <td>Column content</td>
-	      <td>Column content</td>
-	    </tr>
-	  </tbody>
-	</table>
-</div>
+
+<p class="status good" ng-show-auth="login">Hello! You are logged in.</p>
 <p class="status" ng-show-auth="logout">Not logged in</p>
 <p class="status error" ng-show-auth="error">{{auth.error}}</p>
 
