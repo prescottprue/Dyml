@@ -33,7 +33,7 @@
           <ul class="nav navbar-nav" >
               <!--<li><a href="#/catalog">Services</a></li>
               <li ng-show-auth="login"><a href="#/registries">Causes</a></li>-->
-              <!--Signup part of login page <li ng-show-auth="logout,error" ng-click="createMode = true" ng-hide="createMode"><a href="#/login">Sign Up</a></li>         <li ng-show-auth="login"><a href="#/account">Account</a></li>
+              <!--Signup part of login page <li ng-show-auth="logout" ng-click="createMode = true" ng-hide="createMode"><a href="#/login">Sign Up</a></li>         <li ng-show-auth="login"><a href="#/account">Account</a></li>
               <li ng-show-auth="login"><a href="" ng-click="logout()">Logout</a></li>-->
 
               <li class="dropdown">
@@ -45,7 +45,7 @@
               </li>
               <!-- Sign in Dropdown -->
               <li class="dropdown">
-                  <a class="dropdown-toggle" ng-show-auth="logout,error" href="#" data-toggle="dropdown">Log In <strong class="caret"></strong></a>
+                  <a class="dropdown-toggle" ng-show-auth="logout" href="#" data-toggle="dropdown">Log In <strong class="caret"></strong></a>
                   <ul class="dropdown-menu" style="padding: 15px; padding-bottom: 13px;">
                       <!-- Login form -->
                       <form>
@@ -74,14 +74,12 @@
   </nav>
 
   <div ng-view></div>
-  <div>AngularFire-seed v<span app-version></span></div>
 
 <script src="https://cdn.firebase.com/v0/firebase.js"></script>
 <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
 <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -89,6 +87,7 @@
 <script src="js/lib/bluebutton.js"></script>
 
   <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
   <script src="js/config.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/directives.js"></script>

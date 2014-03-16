@@ -2,9 +2,38 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', [])
+angular.module('myApp.controllers', ['ui.bootstrap'])
    .controller('HomeCtrl', ['$scope', 'syncData', function($scope, syncData) {
       syncData('syncedValue').$bind($scope, 'syncedValue');
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('get', '../../ccda/Patient-0.xml', false);
+      xhr.send();
+      
+      var bb = BlueButton(xhr.responseText);
+      $scope.list = bb.demographics().json();
+      console.log(bb.demographics().json());
+
+      $scope.oneAtATime = true;
+
+      $scope.groups = [
+        {
+          title: "Dynamic Group Header - 1",
+          content: "Dynamic Group Body - 1"
+        },
+        {
+          title: "Dynamic Group Header - 2",
+          content: "Dynamic Group Body - 2"
+        }
+      ];
+
+  $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+  $scope.addItem = function() {
+    var newItemNo = $scope.items.length + 1;
+    $scope.items.push('Item ' + newItemNo);
+  };
+    
    }])
 
   .controller('ChatCtrl', ['$scope', 'syncData', function($scope, syncData) {

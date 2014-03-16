@@ -11,8 +11,25 @@
 				"level": "DEBUG"
 			},
 			"reload": true
+		},
+		"chrome": {},
+		"ie": {},
+		"ios": {
+			"minimum_version": "4.3",
+			"device_family": "any"
 		}
 	},
 	"modules": {
+		"topbar": {
+			"version": "2.4"
+		},
+		"request": {
+			"version": "2.5",
+			"config": {
+				"permissions": [
+					"*"
+				]
+			}
+		}
 	}
 }
